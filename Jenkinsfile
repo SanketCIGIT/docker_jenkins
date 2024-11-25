@@ -34,7 +34,7 @@ pipeline {
 			steps {
 				script {
 					try {
-						withCredintials([usernamePassword(credentialsId: 'ditiss', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+						withCredentials([usernamePassword(credentialsId: 'ditiss', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
 						// Explicit login before push
 						sh """
 						echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
